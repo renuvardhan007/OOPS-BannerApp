@@ -1,11 +1,4 @@
-/**
- * OOPSBannerApp UC2 – Banner Print Statements
- *
- * Displays OOPS in a simple banner format.
- *
- * @author Developer
- * @version 1.1
- */
+
 
 public class OOPSBannerApp {
 
