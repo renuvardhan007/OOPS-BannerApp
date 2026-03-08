@@ -1,54 +1,43 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
-
-    public static String[] getOPattern() {
-        return new String[] {
-                "   ******   ",
-                " **      ** ",
-                " **      ** ",
-                " **      ** ",
-                " **      ** ",
-                " **      ** ",
-                "   ******   "
-        };
-    }
-
-    public static String[] getPPattern() {
-        return new String[] {
-                " ******  ",
-                " **    ** ",
-                " **    ** ",
-                " ******  ",
-                " **       ",
-                " **       ",
-                " **       "
-        };
-    }
-
-    public static String[] getSPattern() {
-        return new String[] {
-                "  ****** ",
-                " **       ",
-                " **       ",
-                "  ****** ",
-                "       ** ",
-                "       ** ",
-                " ******  "
-        };
-    }
-
     public static void main(String[] args) {
-
-        String[] o = getOPattern();
-        String[] p = getPPattern();
-        String[] s = getSPattern();
-
-        for (int i = 0; i < o.length; i++) {
-            System.out.println(
-                    o[i] + "   " +
-                    o[i] + "   " +
-                    p[i] + "   " +
-                    s[i]
-            );
+        Map<Character, String[]> patterns = new HashMap<>();
+        patterns.put('O', new String[]{
+                "  ******  ",
+                " **    ** ",
+                " **    ** ",
+                " **    ** ",
+                " **    ** ",
+                " **    ** ",
+                "  ******  "
+        });
+        patterns.put('P', new String[]{
+                " ******  ",
+                " **   ** ",
+                " **   ** ",
+                " ******  ",
+                " **      ",
+                " **      ",
+                " **      "
+        });
+        patterns.put('S', new String[]{
+                "  ****** ",
+                " **      ",
+                " **      ",
+                "  ****** ",
+                "      ** ",
+                "      ** ",
+                " ******  "
+        });
+        char[] banner = {'O','O','P','S'};
+        for (int i = 0; i < 7; i++) {
+            StringBuilder line = new StringBuilder();
+            for (char c : banner) {
+                line.append(patterns.get(c)[i]).append("   ");
+            }
+            System.out.println(line);
         }
     }
 }
